@@ -20,6 +20,10 @@
 
     &-textarea {
       justify-content: flex-end;
+
+      label {
+        margin-bottom: 0.6rem;
+      }
     }
 
     fieldset {
@@ -30,7 +34,7 @@
       padding: 0;
       border: none;
 
-      label {
+      input[type="checkbox"]:checked +label {
         position: relative;
         padding-left: 4rem;
         padding-right: 1.5rem;
@@ -70,10 +74,6 @@
         border: none;
         border-radius: 4px;
         resize: none;
-      }
-
-      p {
-        margin-bottom: 0.6rem;
       }
 
       @include sm-mobile() {

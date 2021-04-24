@@ -47,7 +47,11 @@
     font-size: 1.6rem;
     line-height: 2.1rem;
     
-    color: $color_base;    
+    color: $color_base;
+
+    @include sm-mobile() {
+      min-height: 4rem;
+    }
   }
 
   .border-gradient {
