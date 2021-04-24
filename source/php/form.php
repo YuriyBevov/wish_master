@@ -49,11 +49,11 @@ try {
 
     // Настройки вашей почты
     $mail->Host       = 'ssl://smtp.timeweb.ru'; // SMTP сервера вашей почты
-    $mail->Username   = 'почта на хостинге' ; // Логин на почте
-    $mail->Password   = 'пароль от почты на хостинге'; // Пароль на почте
+    $mail->Username   = 'wish_test@cp06698.tmweb.ru' ; // логин от почты на хостинге
+    $mail->Password   = 'kerqw623n1'; // Пароль на почте
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
-    $mail->setFrom('совпадает с адресом почты на хостинге отправителя', 'Клиент'); // Адрес самой почты и имя отправителя
+    $mail->setFrom('wish_test@cp06698.tmweb.ru', 'Юрий'); // Адрес почты на хостинге и имя отправителя
 
     // Получатель письма
     $mail->addAddress('jury19y@mail.ru');
