@@ -1,0 +1,37 @@
+.social {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__item {
+    padding: 0 0.5rem;
+  }
+
+  &__link {
+    height: 3rem;
+    width: 3rem;
+    border: 1px solid $color_blue;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+
+    svg {
+      fill: $color_blue;
+    }
+
+    transition: opacity $transition_base;
+
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+}

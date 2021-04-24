@@ -1,0 +1,27 @@
+.main-header {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1rem 0.3rem 2.8rem;
+
+    @include sm-mobile() {
+      padding: 1rem;
+      flex-direction: column;
+
+      img {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-top: -1rem;
+
+    @include sm-mobile() {
+      margin-left: 0;
+    }
+  }
+}

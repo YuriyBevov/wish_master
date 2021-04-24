@@ -1,0 +1,125 @@
+.common {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &__wrapper {
+    @include container();
+  }
+
+  &__title {
+    font-family: $font-special;
+    font-weight: bold;
+    font-size: 3.4rem;
+    line-height: 4rem;
+
+    @include lg-mobile() {
+      font-size: 3rem;
+      line-height: 2.8rem;
+    }
+
+    @include sm-mobile() {
+      font-size: 2.4rem;
+      line-height: 2.2rem;
+    }
+  }
+
+  &__text {
+    &--strong {
+      font-size: 2rem;
+      line-height: 3rem;
+
+      @include sm-mobile() {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+      }
+    }
+
+    &--small {
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      color: $color_black;
+    }
+  }
+
+  &__link {
+    font-weight: bold;
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+    
+    color: $color_base;    
+  }
+
+  .border-gradient {
+    max-width: 250px;
+    padding: 1rem;
+    position: relative;
+    background: linear-gradient(to right, red, purple);
+    padding: 3px;
+  }
+
+  &__btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    text-align: center;
+
+    min-width: 24rem;
+    width: fit-content;
+    height: fit-content;
+    min-height: 5rem;
+    padding: 1.5rem;    
+    
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+ 
+    background-color: transparent;
+
+    &--gradient {
+      min-height: 4.8rem;
+      padding: 0;
+      margin: 0 auto;
+      background: linear-gradient(259.7deg, #1862FF 23.72%, #03C1FF 57.69%);
+      
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(100% - 2px);
+        min-height: inherit;
+        border-radius: 4px;
+        background-color: $color_white;
+        margin: 1px 0;
+
+        span {
+          background: linear-gradient(265.07deg, #1862FF 4.96%, #00D2FF 112.8%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }      
+    }
+
+    &--fullfilled {
+      color: $color_white;
+      background: linear-gradient(265.07deg, #1862FF 4.96%, #00D2FF 112.8%);
+    }
+
+    transition: opacity $transition_base;
+
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+}

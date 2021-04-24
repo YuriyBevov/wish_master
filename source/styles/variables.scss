@@ -1,0 +1,40 @@
+//fonts
+
+
+$font-base: "Arial";
+$font-special: "Gilroy-Bold";
+
+// work
+
+$outline: 1px solid red;
+
+// widths
+
+$desktop-width: 1200px;
+$lg-tablet-width: 960px;
+$sm-tablet-width: 768px;
+$lg-mobile-width: 620px;
+$sm-mobile-width: 534px;
+$min-width: 320px;
+
+// colors
+
+$color_base: #2f3441;
+$color_black: #000000;
+$color_blue: #166dff;
+$color_white: #ffffff;
+
+$bg-base: transparent;
+$bg-secondary: #f3fdff;
+$bg-light: #f6f8fa;
+
+// transitions
+
+$transition_base: 0.2s 0.05s ease-in;
+
+// components
+
+// retina
+
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.min.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="display:none">
+      <include src="build/img/static/svg-sprite.svg"></include>
+    </div>
+    <div class="common">
+      <header class="main-header">
+        <div class="main-header__wrapper common__wrapper">
+          <picture>
+            <source type="image/webp" srcset="img/static/logo@1x.webp 1x, img/static/logo@1x.webp 2x">
+            <img src="img/static/logo@1x.png" srcset="img/static/logo@1x.png 2x" width="180" height="72" alt="логотип">
+          </picture>
+
+          <div class="main-header__contacts contacts">
+              <a href="tel:+7(495)1774935" class="contacts__link common__link">+7 (495) 177-49-35</a>
+              <a href="tel:+7(915)4723183" class="contacts__link common__link">+7 (915) 472-31-83</a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="subscription">
+            
+          <header class="subscription__header">
+            <h1 class="visually-hidden">Wish Master - Универсальный интернет-магазин.</h1>
+
+            <div class="subscription__wrapper common__wrapper">
+              <h2 class="subscription__title common__title">Очень жаль, что&nbsp;вы&nbsp;решили отписаться от&nbsp;нашей рассылки</h2>
+            </div>
+          </header>
+
+          <div class="subscription__content common__wrapper">
+
+            <div class="subscription__opinion opinion">
+
+              <div class="opinion__wrapper">
+
+                <p class="opinion__text common__text--strong">Нам важно знать ваше мнение, пожалуйста, уточните причину отписки.</p>
+
+                <form action="#">
+                  <div class="opinion__form-box">
+                    <fieldset class="opinion__form-box-fields">
+                      <input type="checkbox" class="visually-hidden" name="tooMuch"  id="tooMuch" checked tabindex="-1">
+                      <label class="modal-form__label" for="tooMuch" tabindex="0">Слишком часто приходят письма</label>
+
+                      <input type="checkbox" class="visually-hidden" name="notInterested" id="notInterested" tabindex="-1">
+                      <label class="modal-form__label" for="notInterested" tabindex="0">Неинтересные письма</label>
+
+                      <input type="checkbox" class="visually-hidden" name="dontUse" id="dontUse" tabindex="-1">
+                      <label class="modal-form__label" for="dontUse" tabindex="0">Больше не пользуюсь услугами магазина</label>
+                    </fieldset>
+                  
+                    <fieldset class="opinion__form-box-textarea">
+                      <p class="common__text">Свой вариант</p>
+
+                      <textarea name="customVariant" id="customVariant"></textarea>
+                    </fieldset>
+                  </div>
+
+                  <button class="common__btn common__btn--gradient">
+                    <span>
+                      <span>Отписаться</span>
+                    </span>
+                  </button>
+                </form>
+
+              </div>
+                
+            </div>
+
+            <div class="subscription__cancellation cancellation">
+              <div class="cancellation__wrapper">
+                <picture>
+                  <source type="image/webp" srcset="img/static/genie@1x.webp 1x, img/static/genie@1x.webp 2x">
+                  <img class="catalog-item__img" src="img/static/genie@1x.png" srcset="img/static/genie@1x.png 2x" width="147" height="150" alt="изображение Джинна">
+                </picture>  
+                <div class="cancellation__content">
+                  <div class="cancellation__content-text">
+                    <p class="common__text">В наших письмах мы собираем только актуальную информацию и выгодные предложения.</p>
+                    <p>Наши клиенты узнают об этом в первую очередь.</p>
+                    <p class="common__text">Может, стоит всё же сохранить подписку?</p>
+                  </div>
+                  <button class="cancellation__content-btn common__btn common__btn--fullfilled" type="button">Оставить подписку</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="subscription__advantages advantages">
+              <ul class="advantages__list">
+                <li class="advantages__item">
+                  <picture>
+                    <source type="image/webp" srcset="img/static/price@1x.webp 1x, img/static/price@1x.webp 2x">
+                    <img src="img/static/price@1x.png" srcset="img/static/price@1x.png 2x" width="33" height="28" alt="Низкие цены">
+                  </picture>
+                  <p class="common__text--small">Низкие цены</p>
+                </li>
+                <li class="advantages__item">
+                  <picture>
+                    <source type="image/webp" srcset="img/static/star@1x.webp 1x, img/static/star@1x.webp 2x">
+                    <img src="img/static/star@1x.png" srcset="img/static/star@1x.png 2x" width="24" height="28" alt="Гарантия на все товары">
+                  </picture>
+                  <p class="common__text--small">Гарантия на все товары</p>
+                </li>
+                <li class="advantages__item">
+                  <picture>
+                    <source type="image/webp" srcset="img/static/car@1x.webp 1x, img/static/car@1x.webp 2x">
+                    <img src="img/static/car@1x.png" srcset="img/static/car@1x.png 2x" width="42" height="24" alt="Быстрая доставка">
+                  </picture>
+                  <p class="common__text--small">Быстрая доставка</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+        
+      <footer class="main-footer">
+        <div class="common__wrapper social">
+          <ul class="social__list">
+              <li class="social__item">
+                <a href="#" class="social__link">
+                  <svg width="11" height="11" aria-label="инстаграмм">
+                    <use xlink:href="#icon-insta"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social__item">
+                <a href="#" class="social__link">
+                  <svg width="15" height="9" aria-label="вконтакте">
+                    <use xlink:href="#icon-vk"></use>
+                  </svg>
+                </a>
+              </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+    <script src="./js/bundle.js"></script>
+  </body>
+</html>

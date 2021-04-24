@@ -1,0 +1,22 @@
+@import "fonts";
+@import "normalize";
+@import "variables";
+@import "mixins";
+@import "global";
+
+@import "common";
+
+//--- blocks
+@import "./blocks/main-header";
+
+@import "./blocks/subscription";
+@import "./blocks/opinion";
+@import "./blocks/cancellation";
+@import "./blocks/advantages";
+
+@import "./blocks/main-footer";
+
+@import "./blocks/social";
+
+//--- components
+
