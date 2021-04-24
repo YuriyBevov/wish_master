@@ -46,20 +46,22 @@
     font-weight: bold;
     font-size: 1.6rem;
     line-height: 2.1rem;
-    
     color: $color_base;
+
+    transition: opacity $transition_base;
+
+    &:focus,
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
 
     @include sm-mobile() {
       min-height: 4rem;
     }
-  }
-
-  .border-gradient {
-    max-width: 250px;
-    padding: 1rem;
-    position: relative;
-    background: linear-gradient(to right, red, purple);
-    padding: 3px;
   }
 
   &__btn {
