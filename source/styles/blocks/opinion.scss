@@ -34,7 +34,7 @@
       padding: 0;
       border: none;
 
-      input[type="checkbox"]:checked +label {
+      input[type="checkbox"] + label {
         position: relative;
         padding-left: 4rem;
         padding-right: 1.5rem;
