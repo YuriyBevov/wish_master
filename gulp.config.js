@@ -29,6 +29,11 @@ const PATHS = {
     outputFileName: 'styles.min.css',
   },
 
+  php: {
+    src: `${SOURCE_PATH}php/**/*.php`,
+    dest: `${BUILD_PATH}php/`,
+  },
+
   scripts: {
     srcWatch: `${SOURCE_PATH}scripts/**/**/*.js`,
     inputFileName: `${SOURCE_PATH}scripts/index.js`,

@@ -6,25 +6,21 @@ require 'Exception.php';
 
 // Переменные, которые отправляет пользователь
 
-$tooMuch = $_POST['tooMuch'];
-$notInterested = $_POST['notInterested'];
-$dontUse = $_POST['dontUse'];
-$customVariant = $_POST['customVariant'];
+$name = $_POST['tooMuch'];
+$phone = $_POST['notInterested'];
+$email = $_POST['user_mail'];
+$text = $_POST['dontUse'];
 
-if(!$tooMuch) {
-  $tooMuch = 'данные отсутствуют.';
+if(!$name) {
+  $name = 'данные отсутствуют.';
 }
 
-if(!$notInterested) {
-  $notInterested = 'данные отсутствуют.';
+if(!$email) {
+  $email = 'данные отсутствуют.';
 }
 
-if(!$dontUse) {
-    $dontUse = 'данные отсутствуют.';
-}
-
-if(!$customVariant) {
-  $customVariant = 'Поле не было заполнено';
+if(!$text) {
+  $text = 'Поле не было заполнено';
 }
 
 
@@ -32,10 +28,10 @@ if(!$customVariant) {
 $title = "Данные формы:";
 $body = "
   <h2>Получены данные о причинах отписки: </h2>
-  <b>Слишком часто приходят письма:</b> $tooMuch<br>
-  <b>Неинтересные письма:</b> $notInterested<br><br>
-  <b>Больше не пользуюсь услугами магазина:</b> $dontUse<br><br>
-  <b>Другая причина:</b><br>$customVariant
+  <b>Слишком часто приходят письма:</b> $name<br>
+  <b>Неинтересные письма:</b> $email<br><br>
+  <b>Больше не пользуюсь услугами магазина:</b> $phone<br><br>
+  <b>Другая причина:</b><br>$text
   ";
 
 // Настройки PHPMailer
@@ -53,10 +49,10 @@ try {
     $mail->Password   = 'пароль от почты на хостинге'; // Пароль на почте
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
-    $mail->setFrom('совпадает с адресом почты на хостинге отправителя', 'Клиент'); // Адрес самой почты и имя отправителя
+    $mail->setFrom('совпадает с адресом почты на хостинге отправителя', 'Имя отправителя'); // Адрес самой почты и имя отправителя
 
     // Получатель письма
-    $mail->addAddress('jury19y@mail.ru');
+    $mail->addAddress('...@mail.ru');
 
 // Отправка сообщения
 $mail->isHTML(true);

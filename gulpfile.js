@@ -127,7 +127,12 @@ const sprite = () => {
     .pipe(gulp.dest(PATHS.images.dest));
 }
 
-const build = gulp.series(clean, fonts, sprite, html, styles, js, images, webp);
+const php = () => {
+  return gulp.src([PATHS.php.src])
+    .pipe(gulp.dest(PATHS.php.dest));
+}
+
+const build = gulp.series(clean, fonts, sprite, html, styles, js, images, webp, php);
 const start = gulp.series(build, server);
 
 exports.build = build;
