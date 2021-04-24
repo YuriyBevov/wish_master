@@ -6,21 +6,25 @@ require 'Exception.php';
 
 // Переменные, которые отправляет пользователь
 
-$name = $_POST['tooMuch'];
-$phone = $_POST['notInterested'];
-$email = $_POST['user_mail'];
-$text = $_POST['dontUse'];
+$tooMuch = $_POST['tooMuch'];
+$notInterested = $_POST['notInterested'];
+$dontUse = $_POST['dontUse'];
+$customVariant = $_POST['customVariant'];
 
-if(!$name) {
-  $name = 'данные отсутствуют.';
+if(!$tooMuch) {
+  $tooMuch = 'данные отсутствуют.';
 }
 
-if(!$email) {
-  $email = 'данные отсутствуют.';
+if(!$notInterested) {
+  $notInterested = 'данные отсутствуют.';
 }
 
-if(!$text) {
-  $text = 'Поле не было заполнено';
+if(!$dontUse) {
+    $dontUse = 'данные отсутствуют.';
+}
+
+if(!$customVariant) {
+  $customVariant = 'Поле не было заполнено';
 }
 
 
@@ -28,10 +32,10 @@ if(!$text) {
 $title = "Данные формы:";
 $body = "
   <h2>Получены данные о причинах отписки: </h2>
-  <b>Слишком часто приходят письма:</b> $name<br>
-  <b>Неинтересные письма:</b> $email<br><br>
-  <b>Больше не пользуюсь услугами магазина:</b> $phone<br><br>
-  <b>Другая причина:</b><br>$text
+  <b>Слишком часто приходят письма:</b> $tooMuch<br>
+  <b>Неинтересные письма:</b> $notInterested<br><br>
+  <b>Больше не пользуюсь услугами магазина:</b> $dontUse<br><br>
+  <b>Другая причина:</b><br>$customVariant
   ";
 
 // Настройки PHPMailer
@@ -45,14 +49,14 @@ try {
 
     // Настройки вашей почты
     $mail->Host       = 'ssl://smtp.timeweb.ru'; // SMTP сервера вашей почты
-    $mail->Username   = 'почта на хостинге' ; // Логин на почте
-    $mail->Password   = 'пароль от почты на хостинге'; // Пароль на почте
+    $mail->Username   = 'wish_test@cp06698.tmweb.ru' ; // логин от почты на хостинге
+    $mail->Password   = 'kerqw623n1'; // Пароль на почте
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
-    $mail->setFrom('совпадает с адресом почты на хостинге отправителя', 'Имя отправителя'); // Адрес самой почты и имя отправителя
+    $mail->setFrom('wish_test@cp06698.tmweb.ru', 'Юрий'); // Адрес почты на хостинге и имя отправителя
 
     // Получатель письма
-    $mail->addAddress('...@mail.ru');
+    $mail->addAddress('wish_test@cp06698.tmweb.ru');
 
 // Отправка сообщения
 $mail->isHTML(true);
