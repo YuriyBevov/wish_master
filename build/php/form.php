@@ -12,19 +12,25 @@ $dontUse = $_POST['dontUse'];
 $customVariant = $_POST['customVariant'];
 
 if(!$tooMuch) {
-  $tooMuch = 'данные отсутствуют.';
-}
+  $tooMuch = 'пользователь не заполнил данное поле..';
+} else {
+    $tooMuch = 'да';
+  }
 
 if(!$notInterested) {
-  $notInterested = 'данные отсутствуют.';
-}
+  $notInterested = 'пользователь не заполнил данное поле..';
+} else {
+    $notInterested = 'да';
+  }
 
 if(!$dontUse) {
-    $dontUse = 'данные отсутствуют.';
-}
+    $dontUse = 'пользователь не заполнил данное поле..';
+} else {
+    $dontUse = 'да';
+  }
 
 if(!$customVariant) {
-  $customVariant = 'Поле не было заполнено';
+  $customVariant = 'пользователь не заполнил данное поле..';
 }
 
 
@@ -56,7 +62,7 @@ try {
     $mail->setFrom('wish_test@cp06698.tmweb.ru', 'Юрий'); // Адрес почты на хостинге и имя отправителя
 
     // Получатель письма
-    $mail->addAddress('wish_test@cp06698.tmweb.ru');
+    $mail->addAddress('jury19y@mail.ru');
 
 // Отправка сообщения
 $mail->isHTML(true);
@@ -72,5 +78,9 @@ else {$result = "error";}
     $status = "Данные не были отправлены. Причина ошибки: {$mail->ErrorInfo}";
 }
 
+$redirect = isset($_SERVER['HTTP_REFERER'])? $_SERVER['HTTP_REFERER']:'index.html';
+header("Location: $redirect");
+exit();
+
 // Отображение результата
-echo json_encode(["result" => $result, "resultfile" => $rfile, "status" => $status]);
+//echo json_encode(["result" => $result, "resultfile" => $rfile, "status" => $status]);

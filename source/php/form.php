@@ -14,29 +14,24 @@ $customVariant = $_POST['customVariant'];
 if(!$tooMuch) {
   $tooMuch = 'пользователь не заполнил данное поле..';
 } else {
-  $tooMuch = 'да'
-}
+    $tooMuch = 'да';
+  }
 
 if(!$notInterested) {
   $notInterested = 'пользователь не заполнил данное поле..';
 } else {
-    $tooMuch = 'да'
+    $notInterested = 'да';
   }
 
 if(!$dontUse) {
-  $dontUse = 'пользователь не заполнил данное поле..';
+    $dontUse = 'пользователь не заполнил данное поле..';
 } else {
-    $tooMuch = 'да'
+    $dontUse = 'да';
   }
 
 if(!$customVariant) {
   $customVariant = 'пользователь не заполнил данное поле..';
 }
-else {
-  $tooMuch = 'да'
-} else {
-    $tooMuch = 'да'
-  }
 
 
 // Формирование самого письма
