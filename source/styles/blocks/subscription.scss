@@ -10,10 +10,25 @@
 
   &__header {
     min-height: 30rem;
-    background-image: url("../img/static/bg-full.png");
     background-repeat: no-repeat;
     background-position: center;
     background-color: $bg-secondary;
+
+    .webp & {
+      background-image: url("../img/static/bg-full@1x.webp");
+  
+      @media (min-resolution: $retina-dppx) and (min-resolution: $retina-dpi) {
+        background-image: url("../img/static/bg-full@2x.webp");
+      }
+    }
+  
+    .no-webp & {
+      background-image: url("../img/static/bg-full@1x.png");
+  
+      @media (min-resolution: $retina-dppx) and (min-resolution: $retina-dpi) {
+        background-image: url("../img/static/bg-full@2x.png");
+      }
+    }
   }
 
   &__title {
