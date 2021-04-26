@@ -61,7 +61,7 @@ try {
     $mail->Password   = 'kerqw623n1'; // Пароль на почте
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
-    $mail->setFrom('wish_test@cp06698.tmweb.ru', 'Юрий'); // Адрес почты на хостинге и имя отправителя
+    $mail->setFrom('wish_test@cp06698.tmweb.ru', 'Уведомление об отписке'); // Адрес почты на хостинге и имя отправителя
 
     // Получатель письма
     $mail->addAddress('jury19y@mail.ru');

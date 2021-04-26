@@ -4,5 +4,9 @@
     margin-top: auto;
     background-color: $bg-light;
     min-height: 5.5rem;
-    padding: 1.3rem 2rem;
+    padding: 1.3rem 0;
+
+    @include lg-tablet() {
+
+    }
 }
