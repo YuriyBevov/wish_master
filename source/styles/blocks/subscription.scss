@@ -13,6 +13,11 @@
     background-repeat: no-repeat;
     background-position: center;
     background-color: $bg-secondary;
+    background-size: contain;
+
+    @media (max-width: $desktop-width) {
+      background-size: cover;
+    }
 
     .webp & {
       background-image: url("../img/static/bg-full@1x.webp");

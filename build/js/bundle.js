@@ -96,6 +96,63 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_modernizrWebp_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modernizrWebp.js */ "./source/scripts/modules/modernizrWebp.js");
+/* harmony import */ var _modules_sendForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/sendForm */ "./source/scripts/modules/sendForm.js");
+
+
+
+
+
+
+/***/ }),
+
+/***/ "./source/scripts/modules/modals/modalState.js":
+/*!*****************************************************!*\
+  !*** ./source/scripts/modules/modals/modalState.js ***!
+  \*****************************************************/
+/*! exports provided: modalState */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalState", function() { return modalState; });
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils.js */ "./source/scripts/modules/utils.js");
+
+
+const modalState = (modal) => {
+
+  if (modal) {
+    const closeBtn = modal.querySelector('.modal__close');
+
+    const onCloseBtnClickHandler = () => {
+      Object(_utils_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal,'closed');
+    }
+
+    const onEscBtnHandler = (evt) => {
+      if (evt.keyCode === 27) {
+        Object(_utils_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal,'closed');
+      }
+    }
+
+    const onMousedownHandler = (evt) => {
+      const modalContent = modal.querySelector('.modal__wrapper');
+      const clickArea = evt.target == modalContent || modalContent.contains(evt.target);
+      if(!clickArea) {
+        Object(_utils_js__WEBPACK_IMPORTED_MODULE_0__["addClass"])(modal, 'closed');
+      }
+    }
+
+    const openModal = () => {
+      modal.classList.remove('closed');
+
+      setTimeout(function() {
+        window.addEventListener('keydown', onEscBtnHandler);
+        window.addEventListener('mousedown', onMousedownHandler);
+        closeBtn.addEventListener('click', onCloseBtnClickHandler);
+      }, 700);
+    }
+    openModal();
+  }
+};
 
 
 
@@ -120,6 +177,84 @@ const modernizrWebp = function() {
     Modernizr.on('webp', function() {
   });
 }();
+
+
+/***/ }),
+
+/***/ "./source/scripts/modules/sendForm.js":
+/*!********************************************!*\
+  !*** ./source/scripts/modules/sendForm.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modals_modalState_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modals/modalState.js */ "./source/scripts/modules/modals/modalState.js");
+
+
+function sendForm() {
+  const form = document.getElementById('opinion-form')
+  const submitButton = form.querySelector('button[type="submit"]')
+
+  submitButton.addEventListener('click', function (evt) {
+    evt.preventDefault();
+
+    console.log('send')
+
+    const thanksModal = document.querySelector('.modal-success')
+    const errorModal = document.querySelector('.modal-error')
+  
+    function success() {
+      form.reset();
+      Object(_modals_modalState_js__WEBPACK_IMPORTED_MODULE_0__["modalState"])(thanksModal);
+    }
+  
+    function error() {
+      Object(_modals_modalState_js__WEBPACK_IMPORTED_MODULE_0__["modalState"])(errorModal);
+    }
+  
+    var data = new FormData(form);
+    ajax(form.method, form.action, data, success, error);
+  
+    function ajax(method, url, data, success, error) {
+      var xhr = new XMLHttpRequest();
+      xhr.open(method, url);
+      xhr.setRequestHeader("Accept", "application/json");
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState !== XMLHttpRequest.DONE) return;
+        if (xhr.status === 200) {
+          success(xhr.response, xhr.responseType);
+        } else {
+          error(xhr.status, xhr.response, xhr.responseType);
+        }
+      };
+      xhr.send(data);
+    };
+  })
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (sendForm());
+
+
+/***/ }),
+
+/***/ "./source/scripts/modules/utils.js":
+/*!*****************************************!*\
+  !*** ./source/scripts/modules/utils.js ***!
+  \*****************************************/
+/*! exports provided: addClass */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addClass", function() { return addClass; });
+function addClass(el,cl) {
+  el.classList.add(cl);
+};
+
+
 
 
 /***/ }),

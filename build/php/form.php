@@ -1,3 +1,4 @@
+<?php header('Access-Control-Allow-Origin: *'); ?>
 <?php
 // Файлы phpmailer
 require 'PHPMailer.php';

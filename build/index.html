@@ -52,7 +52,7 @@
 
                 <p class="opinion__text common__text--strong">Нам важно знать ваше мнение, пожалуйста, уточните причину отписки.</p>
 
-                <form action="php/form.php" method="POST">
+                <form action="php/form.php" method="POST" id="opinion-form">
                   <div class="opinion__form-box">
                     <fieldset class="opinion__form-box-fields">
                       <input type="checkbox" class="visually-hidden" name="tooMuch" id="tooMuch" checked="" tabindex="-1">
@@ -74,7 +74,7 @@
 
                   <button type="submit" class="common__btn common__btn--gradient">
                     <span>
-                      <span>Отписаться</span>
+                      <span>Отправить</span>
                     </span>
                   </button>
                 </form>
@@ -93,9 +93,8 @@
                   <div class="cancellation__content-text">
                     <p class="common__text">В наших письмах мы собираем только актуальную информацию и выгодные предложения.</p>
                     <p>Наши клиенты узнают об этом в первую очередь.</p>
-                    <p class="common__text">Может, стоит всё же сохранить подписку?</p>
                   </div>
-                  <button class="cancellation__content-btn common__btn common__btn--fullfilled" type="button">Оставить подписку</button>
+                  <a href="https://wishmaster.me/" class="cancellation__content-btn common__btn common__btn--fullfilled" rel="nofollow noopener noreferrer">Подписаться</a>
                 </div>
               </div>
             </div>
@@ -150,6 +149,25 @@
         </div>
       </footer>
     </div>
-    <script src="./js/bundle.js"></script>
+    <div class="modal modal-success closed">
+      <div class="modal__wrapper">
+        <p class="common__text">
+          Спасибо, Вы успешно отписались от рассылки !
+        </p>
+
+        <button type="button" class="modal__close common__btn common__btn--small common__btn--fullfilled">ОК</button>
+      </div>
+    </div>
+    <div class="modal modal-error closed">
+      <div class="modal__wrapper">
+        <p class="common__text">
+          К сожалению, что то пошло&nbsp;не&nbsp;так...
+          Попробуйте&nbsp;снова..
+        </p>
+
+        <button type="button" class="modal__close common__btn common__btn--small common__btn--fullfilled">ОК</button>
+      </div>
+    </div>
+    <script src="./js/bundle.js"></script> 
   </body>
 </html>
